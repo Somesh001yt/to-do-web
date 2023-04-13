@@ -29,8 +29,6 @@ const CreatTable = () => {
       dueDate: new Date().toISOString(),
       timestamp: new Date().toLocaleString(),
     };
-
-    // console.log(taskData);
     const entries = JSON.parse(localStorage.getItem("entries")) || [];
 
     // Add new task to entries
@@ -46,13 +44,14 @@ const CreatTable = () => {
   const navigate = useNavigate();
 
   return (
+    <div >
     <Box
       w="40%"
       m="auto"
       p="5"
       mt="1.5rem"
       borderRadius="10px"
-      boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+      boxShadow="rgba(0, 4, 15, 0.1) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
     >
       <Text fontSize="3xl" fontWeight="600">
         Todo App
@@ -69,7 +68,7 @@ const CreatTable = () => {
           />
         </FormControl>
         <FormControl id="description" isRequired>
-          <FormLabel>Description</FormLabel>
+          <FormLabel style={{marginTop:'10px'}}>Description</FormLabel>
           <Textarea
             placeholder="Enter task description"
             maxLength={1000}
@@ -78,7 +77,7 @@ const CreatTable = () => {
           />
         </FormControl>
         <FormControl id="dueDate">
-          <FormLabel>Due Date</FormLabel>
+          <FormLabel style={{marginTop:'10px'}}>Due Date</FormLabel>
           <Input
             type="date"
             placeholder="Select due date"
@@ -87,7 +86,7 @@ const CreatTable = () => {
           />
         </FormControl>
         <FormControl id="tags">
-          <FormLabel>Tags</FormLabel>
+          <FormLabel style={{marginTop:'10px'}}>Tags</FormLabel>
           <Input
             placeholder="Enter tags and press Enter"
             value={tags.join(",")}
@@ -95,7 +94,7 @@ const CreatTable = () => {
           />
         </FormControl>
         <FormControl id="status" isRequired>
-          <FormLabel>Status</FormLabel>
+          <FormLabel style={{marginTop:'10px'}}>Status</FormLabel>
           <Select
             value={status}
             onChange={(event) => setStatus(event.target.value)}
@@ -111,6 +110,7 @@ const CreatTable = () => {
         </Button>
       </form>
     </Box>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
+    <div style={{backgroundColor:'#f8f8f8'}}>
     <Flex
       as="nav"
       align="center"
@@ -29,6 +30,7 @@ const Navbar = () => {
         </Link>
       </Box>
     </Flex>
+    </div>
   );
 };
 

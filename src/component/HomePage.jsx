@@ -98,25 +98,33 @@ const HomePage = (page) => {
   });
 
   return (
+    <div>
+
+
     <Table
       w="80%"
       m="auto"
       marginTop={"30px"}
       variant="simple"
       color={textColor}
+      boxShadow="rgba(0, 4, 15, 0.1) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+      borderRadius='8px'
     >
-      <Thead>
-        <Tr my=".8rem" pl="0px" color="black" bgColor="blue.400">
-          <Th pl="30px" color="white">
+      <Thead borderRadius={'8px'}>
+        <Tr my=".8rem" pl="0px" color="black" bgColor="blue.500" border={'8px 0 0 0'} >
+         
+          <Th pl="25px" color="white" fontSize={'18px'} textTransform={'capitalize'}  >
             Title
           </Th>
-          <Th color="white">Description</Th>
-          <Th color="white">Due Date</Th>
-          <Th color="white">Tag</Th>
-          <Th color="white">Status</Th>
-          <Th color="white">Timestamp</Th>
-          <Th color="white">Modify</Th>
-          <Th color="white">Delete</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'}  >Description</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Due Date</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Tag</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Status</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Timestamp</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Modify</Th>
+          <Th color="white" fontSize={'18px'} textTransform={'capitalize'} >Delete</Th>
+         
+         
         </Tr>
       </Thead>
       <Tbody>
@@ -193,13 +201,16 @@ const HomePage = (page) => {
             </Td>
           </Tr>
         ))}
-        <StyledPagination
+       
+      </Tbody>
+     
+    </Table>
+    <StyledPagination
           pageSize={itemsPerPage}
           total={totalPages}
           onChange={handlePageChange}
         />
-      </Tbody>
-    </Table>
+    </div>
   );
 };
 
